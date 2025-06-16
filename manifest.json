@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["*://music.163.com/*"],
-      "js": ["netease_music_full_list.js"],
+      "js": ["injector.js"],
       "run_at": "document_start"
     }
   ],
