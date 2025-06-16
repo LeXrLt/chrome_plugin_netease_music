@@ -1,17 +1,3 @@
-// ==UserScript==
-// @name         网易云音乐显示完整歌单
-// @namespace    https://github.com/nondanee
-// @version      1.4.13
-// @description  解除歌单歌曲展示数量限制 & 播放列表 1000 首上限
-// @author       nondanee
-// @match        *://music.163.com/*
-// @icon         https://s1.music.126.net/style/favicon.ico
-// @grant        none
-// @run-at       document-start
-// @downloadURL https://update.greasyfork.org/scripts/406054/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%AD%8C%E5%8D%95.user.js
-// @updateURL https://update.greasyfork.org/scripts/406054/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%AD%8C%E5%8D%95.meta.js
-// ==/UserScript==
-
 (() => {
 	if (window.top === window.self) {
 		const observe = () => {
@@ -367,7 +353,7 @@
 		if (/\/my\//.test(href)) return
 
 		const id = new URLSearchParams(search).get('id')
-		if (/playlist[/?]/.test(href) && id) completePlaylist(id)
+		if (/playlist[\/?]/.test(href) && id) completePlaylist(id)
 	}
 
 	window.addEventListener('songchange', handleSongChange)

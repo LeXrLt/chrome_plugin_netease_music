@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "网易云音乐显示完整歌单",
+  "version": "1.4.13",
+  "description": "解除歌单歌曲展示数量限制 & 播放列表 1000 首上限",
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://music.163.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://music.163.com/*"],
+      "js": ["netease_music_full_list.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["netease_music_full_list.js"],
+      "matches": ["*://music.163.com/*"]
+    }
+  ]
+}
